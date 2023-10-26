@@ -1,0 +1,41 @@
+.login {
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 13px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 2px 13px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 13px -1px rgba(0, 0, 0, 0.75);
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.44);
+}
+
+form {
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    gap: 0.2rem;
+    flex-direction: column;
+}
+
+form input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid gray;
+    font-size: 16px;
+}
+
+form button {
+    padding: 0.5rem;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: blue;
+    color: white;
+    border-radius: 4px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+

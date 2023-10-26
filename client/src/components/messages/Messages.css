@@ -1,0 +1,43 @@
+.messages {
+    height: 80%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    overflow-y: hidden;
+    overflow-y: scroll;
+}
+
+.text {
+    background-color: rgb(230, 230, 230);
+    padding: 0.5rem;
+    width: fit-content;
+    border-radius: 10px 10px 10px 0;
+    position: relative;
+}
+
+.time {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    font-size: 8px;
+}
+
+.text-right {
+    background-color: rgb(78, 78, 253);
+    padding: 0.5rem;
+    width: fit-content;
+    border-radius: 10px 10px 0px 10px;
+    position: relative;
+    color: white;
+    align-self: flex-end;
+}
+.time-right {
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+    font-size: 8px;
+    color: black;
+}

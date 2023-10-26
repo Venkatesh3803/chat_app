@@ -1,0 +1,9 @@
+.homepage {
+    display: flex;
+    gap: 0.3rem;
+    border: 1px solid rgb(229, 227, 227);
+    height: 80vh;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.6rem;
+}
