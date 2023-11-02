@@ -4,59 +4,9 @@
     flex-direction: column;
     gap: 0.4rem;
     position: relative;
+    /* background-color: white; */
 }
 
-
-.profile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 8px;
-    padding: 0.6rem;
-}
-
-.profile-left {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    position: relative;
-}
-
-.profile-left img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.online {
-    width: 10px;
-    height: 10px;
-    background-color: rgb(154, 229, 50);
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0px;
-    left: 30px;
-}
-
-.profile-right {
-    display: flex;
-    gap: 1.5rem;
-    margin-right: 1.5rem;
-}
-
-.profile-right span {
-    border: 1px solid gray;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
-.profile-right span:nth-child(2) {
-    background-color: black;
-    color: white;
-}
 
 .message-inputs {
     background-color: white;
@@ -93,7 +43,20 @@
     background-color: rgb(27, 27, 239);
 }
 
-.emoji{
+.emoji {
     background-color: white;
-    color :white
+    color: white
+}
+
+.conv-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    color: rgba(128, 128, 128, 0.578);
+    font-size: 40px;
+    font-weight: 600;
+    background-color: white;
 }

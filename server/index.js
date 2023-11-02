@@ -5,11 +5,13 @@ import AuthRoute from "./routes/authRoute.js"
 import UserRoute from "./routes/userRoute.js"
 import ConversationRoute from "./routes/conversationRoute.js"
 import MessageRoute from "./routes/messageRoute.js"
+import cors from "cors"
 
 
 const app = express()
 dotenv.config()
 app.use(express.json())
+app.use(cors())
 
 const connection = () => {
     mongoose.connect(process.env.MONGO,

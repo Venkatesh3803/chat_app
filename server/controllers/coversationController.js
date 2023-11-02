@@ -14,11 +14,26 @@ export const createConversation = async (req, res) => {
 }
 
 
-export const getConversation = () => {
+
+export const getConversation = async (req, res) => {
     try {
+        const conversation = await conversationModel.findOne({
+            members: { $all: [req.params.firstUserId, req.params.secondUserId] },
+        });
+        res.status(200).json(conversation)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
 
+
+
+export const getUserConversation = async (req, res) => {
+    try {
+        const conversations = await conversationModel.findById(req.params.id)
+        res.status(200).json(conversations)
     } catch (error) {
-
+        res.status(500).json(error.message)
     }
 }
 
@@ -27,7 +42,7 @@ export const usersConversations = async (req, res) => {
     try {
         const conversations = await conversationModel.find({
             members: { $in: [req.params.userid] }
-        })
+        }).sort({ createdAt: -1 })
         res.status(200).json(conversations)
     } catch (error) {
         res.status(500).json(error.message)

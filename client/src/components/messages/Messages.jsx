@@ -1,55 +1,21 @@
 import "./Messages.css"
+import { useSelector } from "react-redux"
+import moment from "moment"
 
-const Messages = () => {
+
+const Messages = ({ mess }) => {
+  const user = useSelector(state => state.user.user)
+
+  let own = mess?.senderId === user._id
+
   return (
-    <div className="messages">
-      <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
+    <>
+      <div className={own ? "text-right" : "text"}>
+        {mess.text}
+        <div className={own ? "time-right" : "time"}>{moment(mess.createdAt).startOf().fromNow()}</div>
       </div>
-      <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div>
-      <div className="text-right">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time-right">12:00pm</div>
-      </div>
-      <div className="text-right">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time-right">12:00pm</div>
-      </div>
-      <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div>
-      <div className="text-right">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time-right">12:00pm</div>
-      </div>
-      <div className="text-right">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time-right">12:00pm</div>
-      </div>
-      <div className="text-right">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time-right">12:00pm</div>
-      </div>
-      <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div> <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div> <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div> <div className="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <div className="time">12:00pm</div>
-      </div>
+    </>
 
-    </div>
   )
 }
 

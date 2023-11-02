@@ -39,3 +39,9 @@ form button {
     cursor: pointer;
 }
 
+@media screen and (max-width:780px) {
+    .login{
+        width: 90%;
+    }
+}
+

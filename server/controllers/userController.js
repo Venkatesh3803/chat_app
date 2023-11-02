@@ -30,8 +30,6 @@ export const getAllUser = async (req, res) => {
         let users
         if (search) {
             users = await userModel.find({ userName: { $regex: search, $options: 'i' } })
-        }else{
-            users = await userModel.find()
         }
         res.status(200).json(users)
     } catch (error) {

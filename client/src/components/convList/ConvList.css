@@ -1,0 +1,55 @@
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.list-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.list-left img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.list-left p {
+    font-size: 13px;
+}
+
+.username {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.list-right p {
+    font-size: small;
+}
+
+.bedge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+    font-size: 10px;
+}

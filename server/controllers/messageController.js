@@ -1,6 +1,5 @@
 import messageModel from "../models/messageModel.js";
 
-
 export const createMessage = async (req, res) => {
     const newMessage = await messageModel(req.body)
     try {
@@ -13,7 +12,8 @@ export const createMessage = async (req, res) => {
 
 export const getMessage = async (req, res) => {
     try {
-        const messages = await messageModel.find({ conversationId: req.body.conversationId })
+        const messages = await messageModel.find({ conversationId: req.params.id })
+
         res.status(200).json(messages)
     } catch (error) {
         res.status(500).json(error.message)

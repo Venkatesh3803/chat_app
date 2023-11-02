@@ -1,24 +1,20 @@
 import "./Profile.css"
 
-const Profile = ({ setProfile }) => {
+const Profile = ({ setProfile, frndProfile }) => {
     return (
         <div className="profile-card">
             <div className="cancel" onClick={() => setProfile(false)}>X</div>
-
             <div className="user-info">
-                <img src="https://images.pexels.com/photos/7611191/pexels-photo-7611191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+            <img src={frndProfile.profilePic ? frndProfile.profilePic : "https://tse3.mm.bing.net/th?id=OIP.puMo9ITfruXP8iQx9cYcqwHaGJ&pid=Api&P=0&h=180"} alt="" />
+
                 <div className="information">
                     <div className="">
                         <h4>Username:-</h4>
-                        <p>Sandeep</p>
+                        <p>{frndProfile.userName}</p>
                     </div>
                     <div className="">
                         <h4>Status:-</h4>
-                        <p>Avaliable</p>
-                    </div>
-                    <div className="">
-                        <h4>Username:-</h4>
-                        <p>Sandeep</p>
+                        <p>{frndProfile.status}</p>
                     </div>
                 </div>
             </div>
