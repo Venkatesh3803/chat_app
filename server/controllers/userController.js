@@ -17,7 +17,8 @@ export const getUser = async (req, res) => {
     try {
         const currUser = await userModel.findById(req.params.id);
         if (!currUser) return res.status(403).json('You are not suppose to do that');
-        res.status(200).json(currUser)
+        const {password, ...others} = currUser._doc;
+        res.status(200).json(others)
     } catch (error) {
         res.status(500).json(error.message)
     }

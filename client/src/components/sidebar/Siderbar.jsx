@@ -13,7 +13,6 @@ const Siderbar = ({ conversation, user, setConv, setConversation, online }) => {
     useEffect(() => {
         const fetchSearch = async () => {
             try {
-
                 const res = await publicRequest.get(`user?search=${search}`)
                 let result = res.data;
                 setSearchResult(result.filter(u => u?._id !== user?._id))
@@ -36,7 +35,7 @@ const Siderbar = ({ conversation, user, setConv, setConversation, online }) => {
                 </div>
                 {search &&
                     <div className="chat-list">
-                        {searchResult.length === 0 && <span>Search For Friends</span>}
+                        {searchResult.length === 0 && <span>No Results Found</span>}
                         {searchResult?.map((s) => {
                             return (
                                 <SearchList search={s} key={s._id} setConversation={setConversation} conversation={conversation} setConv={setConv} />

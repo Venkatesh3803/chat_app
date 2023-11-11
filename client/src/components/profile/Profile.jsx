@@ -5,7 +5,7 @@ const Profile = ({ setProfile, frndProfile }) => {
         <div className="profile-card">
             <div className="cancel" onClick={() => setProfile(false)}>X</div>
             <div className="user-info">
-            <img src={frndProfile.profilePic ? frndProfile.profilePic : "https://tse3.mm.bing.net/th?id=OIP.puMo9ITfruXP8iQx9cYcqwHaGJ&pid=Api&P=0&h=180"} alt="" />
+                <img src={frndProfile.profilePic ? frndProfile.profilePic : "https://tse3.mm.bing.net/th?id=OIP.puMo9ITfruXP8iQx9cYcqwHaGJ&pid=Api&P=0&h=180"} alt="" />
 
                 <div className="information">
                     <div className="">

@@ -26,6 +26,9 @@ app.listen(8000, () => {
 
 
 // routes
+app.use("/", (req, res) => {
+    res.send("Welcome to Chat App")
+})
 
 app.use("/api/auth", AuthRoute)
 app.use("/api/user", UserRoute)

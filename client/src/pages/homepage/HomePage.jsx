@@ -5,6 +5,7 @@ import { publicRequest } from "../../redux/axios";
 import { useSelector } from "react-redux"
 import Siderbar from "../../components/sidebar/Siderbar";
 import { io } from "socket.io-client";
+import Navber from "../../components/navber/Navber";
 
 const HomePage = () => {
     const [conv, setConv] = useState("")
@@ -25,8 +26,6 @@ const HomePage = () => {
 
     useEffect(() => {
         socket.current = io("ws://localhost:8900")
-
-
         socket.current.emit("addUser", user._id)
         const chatMember = conversation.members?.find(m => m !== user._id)
         socket.current.on("getUsers", users => {
@@ -36,10 +35,13 @@ const HomePage = () => {
 
 
     return (
-        <div className="homepage">
-            <Siderbar conversation={conversation} setConversation={setConversation} user={user} setConv={setConv} online={onlineUsers} />
-            <Chat convId={conv} conversation={conversation} socket={socket} />
-        </div>
+        <>
+            <div className="homepage">
+                <Navber />
+                <Siderbar conversation={conversation} setConversation={setConversation} user={user} setConv={setConv} online={onlineUsers} />
+                <Chat convId={conv} conversation={conversation} socket={socket} />
+            </div>
+        </>
     )
 }
 
